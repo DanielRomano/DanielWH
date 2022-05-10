@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WHs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" id="logo" href="#">Daniel WHs</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-secondary" id="sumWh">Sum HWs</button>
+        </li>
+        <li>
+          <button class="btn btn-secondary" id="timeLeft">Time left</button>
+        </li>
+        <li class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" id="save" data-toggle="dropdown">Save</button>
+          <div class="dropdown-menu" aria-labelledby="save">
+            <a class="dropdown-item" id="saveNotes" href="javascript:;">Save notes</a>
+            <a class="dropdown-item" id="saveLog" href="javascript:;">Save log</a>
+          </div>
+        </li>
+        <li>
+          <button class="btn btn-secondary" data-toggle="modal" data-target="#memoModel">Memo</button>
+        </li>
+        
+        <li>
+          <a class="btn btn-dark ml-2" target="_blank" href="issues.html">Issues</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="container-fluid text-center">
+
+    <div class="card centerBox">
+      <div class="card-body">
+        <div id="form">
+          <div class="form-group">
+            <label for="name">Label</label>
+            <input type="text" id="name" />
+            <button class="btn btn-success" id="start">Start</button>
+
+          </div>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#insertModalCenter">Manual</button>
+        </div>
+        <div id="now" data-toggle="modal" data-target=".notesPop" data-whatever=""></div>
+        <div id="nowStartTime"></div>
+        <button class="btn btn-danger" id="end">End</button>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="insertModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Manual</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="TimeStart">*Time Start</label>
+              <input type="time" id="TimeStart" />
+            </div>
+            <div class="form-group">
+              <label for="TimeStart">Time end</label>
+              <input type="time" id="TimeEnd" />
+            </div>
+            <div class="form-group">
+              <label for="namem">*Label</label>
+              <input type="text" id="namem" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="insertManual" class="btn btn-primary">Insert</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal notes-->
+    <div class="modal fade bd-example-modal-lg notesPop" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Label</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <textarea id="notes" data-id=""></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="saveThis" class="btn btn-primary">Save</button>
+            
+
+            <div id="saved">
+            <div class="spinner-border text-success float-left" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <div class="float-left ml-3 text-success">Save...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Memo modal  -->
+
+    <div class="modal fade bd-example-modal-lg" id="memoModel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Memo</h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="headerMemo">
+                <input id="searchMemo" class="float-right w-25 form-control mr-3" type="text" placeholder="Search..">
+                <button id="newMemo" class="btn btn-primary ml-3 float-left">New</button>
+              </div>
+
+ 
+            <div id="memoBody"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="list">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th class="table_msum"><button id="checkMH" class="btn btn-primary">WHs</button></th>
+            <th></th>
+            <th class="table_date">Date</th>
+            <th class="table_label">Label</th>
+            <th class="table_sdate">Start</th>
+            <th class="table_edate">End</th>
+            <th class="table_total">Total WHs</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="btn btn-warning" id="clean">clean table</div>
+  </div>
+
+
+  <div class="settings">
+    <div class="settingsIconHolder">
+      <div id="settingsIcon" data-toggle="collapse" data-target="#theSettings"></div>
+    </div>
+    <div class="collapse theSettings" id="theSettings">
+      <div class="form-check">
+        <label class="form-check-label mr-3" for="notTurnOnOFF">
+          Notifications: 
+        </label>
+        <input type="checkbox" data-toggle="toggle" id="notTurnOnOFF" checked>
+        
+      </div>
+
+      <div class="form-group row">
+        <label for="notTime" class="col-sm-7 col-form-label">Notifaction time (min)</label>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" id="notTime" value="15">
+        </div>
+      </div>
+
+
+
+      
+      <div class="ml-3">
+        Table Columns
+        <div class="options clearfix">
+          <div class="ck-button">
+            <label><input type="checkbox" value="1" name="table_date" checked="checked"><span>Date</span></label>
+          </div>
+          <div class="ck-button">
+            <label><input type="checkbox" value="1" name="table_label" checked="checked"><span>Label</span></label>
+          </div>
+          <div class="ck-button">
+            <label><input type="checkbox" value="1" name="table_sdate" checked="checked"><span>Start</span></label>
+          </div>
+
+          <div class="ck-button">
+            <label><input type="checkbox" value="1" name="table_edate" checked="checked"><span>End</span></label>
+          </div>
+
+          <div class="ck-button">
+            <label><input type="checkbox" value="1" name="table_total" checked="checked"><span>Total WHs</span></label>
+          </div>
+
+          <div class="ck-button">
+            <label><input type="checkbox" value="1" name="table_msum"><span>Select WHs</span></label>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/notification.js"></script>
+</body>
+
+</html>

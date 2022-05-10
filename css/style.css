@@ -1,0 +1,313 @@
+#issues {
+    display: none;
+}
+#delete-div {
+    display: none;
+}
+.Newcontainer {
+    width: 2240px;
+    margin: 0 auto;
+}
+.nowWork {
+    width: 100%;
+    float: right;
+}
+.pending {
+    width: 100%;
+    float: right;
+}
+
+.nowWork .issuesBlock {
+    margin-top: -10px;
+}
+#end {
+    display: none;
+    margin-top: 20px;
+}
+#list {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.centerBox {
+    width: 100%;
+    max-width: 600px;
+    margin: 22px auto;
+}
+#now {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.settings {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+}
+.theSettings {
+    width: 350px;
+    background: #FFF;
+    border: 1px solid #DEDEED;
+    /* padding: 10px; */
+    /* border-top: 0px; */
+}
+
+.settingsTile {
+    background: #123456;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #FFF;
+    padding: 10px;
+
+}
+#settingsIcon {
+    background: url("../img/settings2.png") no-repeat center;
+    background-color: #e6e6fa;
+    background-size: 40px;
+    width: 70px;
+    height: 70px;
+    right: 0;
+    box-shadow: 1px 14px 15px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 14px 15px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 14px 15px -10px rgba(0,0,0,0.75);
+    position: absolute;
+    right: 0;
+}
+.settingsIconHolder {
+    position: relative;
+    width: 100%;
+    height: 74px;
+}
+.col-form-label {
+    padding-left: 2.25rem !important;
+}
+.form-check { padding-top: 20px;}
+.remove {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#list table td.table_label {
+    cursor: pointer;
+}
+nav ul li button {
+  margin-left: 10px;
+}
+
+
+.clearfix:before,.clearfix:after {
+    content: " ";display: table; /* 2 */}
+.clearfix:after {clear: both;}
+.clearfix {*zoom: 1;}
+
+.options {margin-bottom: 8px;}
+
+/* Style checkboxes as Toggle Buttons */
+.ck-button {
+    margin:2px;
+    background-color:#dae0e5;
+    border-radius:4px;
+    overflow:auto;
+    float:left;
+    color:#212529;
+}
+
+.ck-button label {
+    float:left;
+    width:auto;
+    margin-bottom: 0;
+}
+.ck-button label span {
+    text-align:center;
+    padding:3px 8px;
+    display:block;
+}
+.ck-button label input {
+    position:absolute;
+    top:-20px;
+    width: 0px;
+}
+.ck-button input:checked + span {
+    background: #007bff;
+    color: #FFF;
+}
+
+.ck-button input + span:hover {
+    background-color:#e2e6ea !important;
+}
+
+.ck-button  input:checked + span:hover {
+    background-color:#0069d9 !important;
+}
+#saved {
+    display: none;
+    position: absolute;
+    left: 20px;
+}
+
+
+#notes, #notesPopIssueComment {
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    direction: rtl;
+}
+.selectedBadge {
+    border: 3px solid #000;
+}
+#memoModel textarea {
+    width: 100%;
+    height: 300px;
+    direction: rtl;
+    background-color: #fcfcd4;
+    padding-right: 10px;
+    margin-bottom: -6px;
+    resize: none;
+    font-size: 16px;
+    line-height: 30px;
+    border: 1px solid #EEEEEE;
+    box-shadow: 1px 1px 0 #dddddd;
+    background-image: -webkit-linear-gradient(top , transparent, transparent 29px,#E7EFF8 0);
+    background-size: 100% 30px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+/* .memoText {
+    width: 40% !important;
+    margin-left: 5%;
+    margin-top: 5%;
+
+} */
+
+
+.memoBlock {
+    width: 47%;
+    float: right;
+    border: 1px solid #e0e4e8;
+    margin-top: 2%;
+    border-radius: 15px;
+    margin-right: 2%;
+}
+
+
+.memoBlock input {
+    float: right;
+    border: 0px;
+    width: 80%;
+    text-align: right;
+    direction: rtl;
+    height: 57px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.memoBlock input:focus-visible, .memoBlock textarea:focus-visible {
+    outline: none;
+}
+.memoBlock .removeMemo {
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+
+.headerMemo {
+    width: 100%;
+    float: right;
+}
+
+#searchMemo {
+    text-align: right;
+    direction: rtl;
+}
+
+/* Issues style */
+
+.issuesBlock {
+    width: 260px;
+    height: 500px;
+    background: #DEDEED;
+    float: left;
+    margin: 10px;
+}
+
+.issuesBlock h3 {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.issueItem {
+    border-radius: 5px;
+  background-color: #fff;
+  width: 230px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.issueItem > .issueName {
+    font-weight: bold;
+  }
+  
+  .issueItem > .issueNumber {
+    font-size: small;
+  }
+  
+  .issueItem > .dueDate {
+    font-size: smaller;
+  }
+  #delete-div {
+    background-color: #fff;
+    border: 3px dotted #000;
+    margin: 10px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+  }
+
+  .issuesBlock input, .issuesBlock textarea {
+    width: 240px;
+    margin: 1px 5px;
+  }
+  
+  .issuesBlock input {
+    height: 30px;
+  }
+  .issuesBlock input[type="button"] {
+    width: 100px;
+    margin: 5px;
+  }
+@media only screen and (max-width: 991px) {
+    .memoBlock {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #settingsIcon {
+        width: 40px;
+        height: 40px;
+        background-size: 30px;
+    }
+    .settings {
+        bottom: 2px;
+        right: 10px;
+    }
+    .settingsIconHolder {
+        height: 44px;
+    }
+    ul li button {
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .memoBlock input {
+        width: 75%;
+    }
+}
